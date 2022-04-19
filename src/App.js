@@ -1,24 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
+//import { useEffect, useState } from 'react';
+//import axios from 'axios';  
+
+import {Home} from './Home';
+import {Customer} from './Customer';  
+import {Product} from './Product';
+import {Sales} from './Sales';  
+import {Store} from './Store';
+import {Navigation} from './Navigation';  
+
+
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter> 
+     <div className="container">
+      <h3> REACT PROJECT</h3>
+      <Navigation />
+      
+
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path='/Customer' element={<Customer/>}/>
+        <Route path='/Product' element={<Product/>}/>
+        <Route path='/Sales' element={<Sales/>}/>
+        <Route path='/Store' element={<Store/>}/>
+        
+
+      </Routes>
+      </div>
+
+    </BrowserRouter>
+   
+    
+ 
+     
+    
   );
 }
 
